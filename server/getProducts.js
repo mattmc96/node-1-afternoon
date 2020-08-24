@@ -1,7 +1,9 @@
 const products = require("../products.json");
 
+// request and resend
 const getProducts = (req, res) => {
   if (req.query.price) {
+    //filter out the values or could do .includes
     const items = products.filter(
       (val) => val.price >= parseInt(req.query.price)
     );
